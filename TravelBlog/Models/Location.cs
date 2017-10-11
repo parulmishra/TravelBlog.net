@@ -12,7 +12,7 @@ namespace TravelBlog.Models
     {
         [Key]
         public int LocationId { get; set; }
-        public string name { get; set; }
+        public string Name { get; set; }
         public virtual ICollection<Experience> Experiences { get; set; }
         public virtual ICollection<People> Peoples { get; set; }
     }

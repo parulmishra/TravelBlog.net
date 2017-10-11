@@ -4,7 +4,3 @@
     position: relative;
     padding-top: 80px;
 }
-
-    .section:nth-child(even) {
-        background-color: green;
-    }

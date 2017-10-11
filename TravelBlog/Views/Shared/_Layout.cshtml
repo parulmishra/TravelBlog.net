@@ -19,14 +19,18 @@
             </div>
             <div class="collapse navbar-collapse" id="top-navbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a> Experiences </a></li>
-                    <li><a> Locations </a></li>
-                    <li><a> People </a></li>
+                    <li>@Html.ActionLink("Experiences", "Index", "Experience")</li>
+                    <li>@Html.ActionLink("Locations", "Index", "Location")</li>
+                    <li>@Html.ActionLink("People", "Index", "People")</li>
                 </ul>
             </div>
         </div>
     </nav>
-    <header>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+    <!--<header>
         <div class="container"></div>
     </header>
     <section id="experiences" class="section">
@@ -37,8 +41,4 @@
     </section>
     <section id="people" class="section">
         <div class="container"></div>
-    </section>
-    <div>
-        @RenderBody()
-    </div>
-</body>
+    </section>-->
