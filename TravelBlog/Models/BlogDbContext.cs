@@ -17,7 +17,7 @@ namespace TravelBlog.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseMySql(@"Server=localhost;Port=3306;database=TravelBlog;uid=parul;pwd=parul;");
+            options.UseMySql(@"Server=localhost;Port=8889;database=TravelBlog;uid=root;pwd=root;");
         }
 
         public BlogDbContext(DbContextOptions<BlogDbContext> options)

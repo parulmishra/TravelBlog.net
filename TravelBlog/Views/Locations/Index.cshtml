@@ -1,0 +1,32 @@
+﻿@model IEnumerable<TravelBlog.Models.Location>
+@{
+    ViewData["Title"] = "Locations";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>View all the Locations</h2>
+<hr/>
+
+<table class="table">
+    <tr>
+    	<th>
+    		@Html.DisplayNameFor(model => model.name)	
+    	</th>	
+    </tr>	
+    @foreach(var location in Model)
+    {
+    <tr>
+    	<td>
+    		@Html.DisplayFor(modelLocation => location.name)	
+    	</td>
+		<td>
+            @Html.ActionLink("Details", "Details", new {id = location.LocationId})    
+        </td>
+		<td>
+           @Html.ActionLink("Delete", "Delete", new {id = location.LocationId})  
+        </td>
+    </tr>
+    }
+</table>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
