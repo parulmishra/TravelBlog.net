@@ -5,6 +5,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\Experience\**" />
+    <Compile Remove="Controllers\Home\**" />
+    <Compile Remove="Controllers\People\**" />
+    <Content Remove="Controllers\Experience\**" />
+    <Content Remove="Controllers\Home\**" />
+    <Content Remove="Controllers\People\**" />
+    <EmbeddedResource Remove="Controllers\Experience\**" />
+    <EmbeddedResource Remove="Controllers\Home\**" />
+    <EmbeddedResource Remove="Controllers\People\**" />
+    <None Remove="Controllers\Experience\**" />
+    <None Remove="Controllers\Home\**" />
+    <None Remove="Controllers\People\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
