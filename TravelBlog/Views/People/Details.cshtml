@@ -6,21 +6,21 @@
 }
 <h2>People Details</h2>
 <hr/>
+<div class="container">
 <table>
 	<tr>
     	<th>
             <h3>Person @Html.DisplayNameFor(model => model.Name)</h3>
     	</th>
-		<th> </th>
         <th>
             <h3>Location @Html.DisplayNameFor(model => model.Location.Name)</h3>
         </th>
-		<th></th>
-       
     	<th>
             <h3>Experience @Html.DisplayNameFor(model => model.Experience.Description)</h3>
         </th>
-		
+		<th>
+            Options
+        </th>
 	</tr>
     <tr>
 		<td>
@@ -34,8 +34,10 @@
          <td>
             <h5>@Html.DisplayFor(model => model.Experience.Description)</h5>
         </td>
-
+        <td>
+			<h5>@Html.ActionLink("Edit", "Edit", new { id = Model.PeopleId }) | @Html.ActionLink("Back to People List", "Index")</h5>
+		</td>
 	</tr>
 </table>
-
- <p>@Html.ActionLink("Edit", "Edit", new { id = Model.PeopleId }) | @Html.ActionLink("Back to People List", "Index")</p>
+</div>
+ 

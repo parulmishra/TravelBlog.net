@@ -1,6 +1,6 @@
 ﻿@model TravelBlog.Models.People
 @{
-    ViewData["Title"] = "Experience - Details";
+    ViewData["Title"] = "People - Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h2>Add a new Person</h2>
@@ -14,7 +14,7 @@
     @Html.DropDownList("LocationId")
 
     @Html.LabelFor(model => model.ExperienceId)
-    @Html.DropDownList("ExperienceId").Where(model => model.Experiences.LocationId == model.LocationId)
+    @Html.DropDownList("ExperienceId")
 
     <input type="submit" value="Create" class="btn btn-default" />
 }

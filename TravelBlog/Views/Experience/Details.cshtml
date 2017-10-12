@@ -8,6 +8,16 @@
 <hr />
 
 <p>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</p>
-<p>@Html.DisplayNameFor(model => model.LocationId) : @Html.DisplayFor(model => model.LocationId)</p>
-
-<p>@Html.ActionLink("Edit", "Edit", new { id = Model.ExperienceId }) | @Html.ActionLink("Back to Experiences", "Index")</p>
+<p>@Html.DisplayNameFor(model => model.Location.Name) : @Html.DisplayFor(model => model.Location.Name)</p>
+<ul>
+	@if(Model.Peoples != null)
+	{
+    @foreach(var person in Model.Peoples)
+    {
+        <li>@Html.DisplayFor(model => person.Name)</li>
+    }
+	}
+</ul>
+<p>@Html.ActionLink("Edit", "Edit", new { id = Model.ExperienceId }) | 
+    @Html.ActionLink("Back to Experiences", "Index") | 
+    @Html.ActionLink("AddPeople", "AddPeople", new { ExperienceId = Model.ExperienceId })</p>

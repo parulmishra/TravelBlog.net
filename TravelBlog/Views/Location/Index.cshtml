@@ -9,8 +9,11 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)   
+            Location @Html.DisplayNameFor(model => model.Name)   
         </th>   
+		 <th>
+             Options
+        </th>  
     </tr>   
 
     @foreach(var location in Model)
@@ -20,14 +23,15 @@
     		@Html.DisplayFor(x => location.Name)	
     	</td>
 		<td>
-            @Html.ActionLink("Details", "Details", new {id = location.LocationId})    
-        </td>
-		<td>
-           @Html.ActionLink("Delete", "Delete", new {id = location.LocationId})  
-        </td>
+            @Html.ActionLink("Details", "Details", new {id = location.LocationId}) |    
+		
+            @Html.ActionLink("Delete", "Delete", new {id = location.LocationId})  
+         </td>
     </tr>
     }
 </table>
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<center>
+    <h3 class="create">
+        @Html.ActionLink("Create New", "Create")
+    </h3>
+</center>

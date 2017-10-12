@@ -9,10 +9,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Description)
+            Experience @Html.DisplayNameFor(model => model.Description)
         </th>
 		<th>
-            @Html.DisplayNameFor(model => model.Location.Name)
+            Location @Html.DisplayNameFor(model => model.Location.Name)
+        </th>
+		<th>
+            Options
         </th>
     </tr>
 
@@ -33,6 +36,8 @@
 		</tr>
 	}
 </table>
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<center>
+    <h4 class="create">
+        @Html.ActionLink("Create New", "Create")
+    </h4>
+</center>

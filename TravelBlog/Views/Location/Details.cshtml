@@ -7,7 +7,7 @@
 
 <h2>Item Details</h2>
 <hr/>
-
+<div class="container">
 <h3>Location @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(z => z.Name)</h3>
 <ul>
 @foreach(var experience in Model.Experiences)
@@ -26,3 +26,4 @@
 </ul>
 
 <p>@Html.ActionLink("Edit", "Edit", new { id = Model.LocationId }) | @Html.ActionLink("Back to List", "Index")</p>
+</div>

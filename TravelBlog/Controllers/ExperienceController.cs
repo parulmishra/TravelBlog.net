@@ -18,11 +18,16 @@ namespace TravelBlog.Controllers
         {
             return View(db.Experiences.Include(experiences => experiences.Location).ToList());
         }
+
         public IActionResult Details(int id)
         {
-            var thisExperience = db.Experiences.FirstOrDefault(experiences => experiences.ExperienceId== id);
+            var thisExperience = db.Experiences
+                                 .Include(x => x.Location)
+                                 .ThenInclude(x => x.Peoples)
+                                   .FirstOrDefault(experiences => experiences.ExperienceId == id);
             return View(thisExperience);
         }
+
         public IActionResult Create()
         {
             ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "Name");
@@ -58,6 +63,22 @@ namespace TravelBlog.Controllers
         {
             var thisExperience = db.Experiences.FirstOrDefault(experiences => experiences.ExperienceId == id);
             db.Experiences.Remove(thisExperience);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        // Here we are passing experienceId parameter beacuse for creating an new people we need to have experience and location ids.
+        public IActionResult AddPeople(int ExperienceId)
+        {
+            //Here we are creating a experience object so that we can get locationId from this in the view.
+            ViewBag.Experience = db.Experiences.FirstOrDefault(x=>x.ExperienceId == ExperienceId);
+
+            return View();
+        }
+        [HttpPost]
+        public IActionResult AddPeople(People people)
+        {
+            db.Peoples.Add(people);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -1,0 +1,20 @@
+﻿<!-- since we are making a people object or new people record, we need to use the people Model as below-->
+@model TravelBlog.Models.People 
+@{
+    ViewData["Title"] = "Create - People for this Experience";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Add a new Person</h2>
+<hr />
+@using (Html.BeginForm())
+{ <!-- To create a people object we need to have all properties of the people class in the form hence used hidden fields --> 
+
+    <input type="hidden" name="LocationId" value="@ViewBag.Experience.LocationId" />    
+    <input type="hidden" name="ExperienceId" value="@ViewBag.Experience.ExperienceId" />
+  
+    	@Html.LabelFor(model => model.Name)
+        @Html.EditorFor(model => model.Name)
+  
+    <input type="submit" value="Create" class="btn btn-default" />
+}
+@Html.ActionLink("Back to People", "Index")

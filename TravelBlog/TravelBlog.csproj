@@ -17,6 +17,7 @@
     <None Remove="Controllers\Experience\**" />
     <None Remove="Controllers\Home\**" />
     <None Remove="Controllers\People\**" />
+    <Content Remove="Views\People\Create.cshtml" />
   </ItemGroup>
 
   <ItemGroup>

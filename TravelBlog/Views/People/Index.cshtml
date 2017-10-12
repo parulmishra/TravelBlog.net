@@ -2,19 +2,23 @@
 @{
     ViewData["Title"] = "People List";
     Layout = "~/Views/Shared/_Layout.cshtml";
-}
+}   
+<hr/>
+<hr/>
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Name)
+        </th>
+		<th>
+            Options
         </th>
 	</tr>
 	
 	@foreach(var listPeople in Model)
     {
          <tr>
-            <td>
-			   
+            <td> 
                 @Html.DisplayFor(model => listPeople.Name)
             </td>
 		    <td>
@@ -26,6 +30,8 @@
 	}
 </table>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<center>
+    <p class="create">
+        @Html.ActionLink("Create New", "Create")
+    </p>
+</center>
