@@ -1,7 +1,7 @@
 ﻿@model TravelBlog.Models.Experience
 
 @{
-    ViewData["Title"] = "Experinece - Edit";
+    ViewData["Title"] = "Experience - Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h2>Edit</h2>
@@ -11,7 +11,7 @@
 {
     @Html.HiddenFor(model => model.ExperienceId)
 
-    @Html.HiddenFor(model=> model.Description)
+    @Html.LabelFor(model=> model.Description)
     @Html.EditorFor(model => model.Description)
 
     @Html.LabelFor(model => model.LocationId)

@@ -4,3 +4,9 @@
     position: relative;
     padding-top: 80px;
 }
+table {
+    width: 100%;
+}
+th {
+    height: 50px;
+}
